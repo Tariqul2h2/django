@@ -1,9 +1,16 @@
-<h1>{{ question.question_text }}</h1>
+<h1>{{ questions.question_text }}</h1>
 
 <ul>
-{% for choice in question.choice_set.all %}
+{% for choice in questions.choice_set.all %}
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
 {% endfor %}
 </ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<form action="{% url 'polls:detail' questions.id %}">
+    
+    <input type="submit" value="Vote again?"/>
+</form>
+
+<form action="{% url 'polls:index' %}" method="get">
+    <input type="submit" value="Go back to main" />
+</form>
