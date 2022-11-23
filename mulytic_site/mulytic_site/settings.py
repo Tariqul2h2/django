@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-c(@1ji=d$xwzkesd5!=2s(t0hxm=4c5t(14nlug2e$&8j$k9d3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0'
+]
 
 
 # Application definition
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'classroom.apps.ClassroomConfig',
+    'polls.apps.PollsConfig',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
